@@ -1,0 +1,264 @@
+.wrapper {
+  display: flex;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.text {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 40px;
+  color: #fff;
+  margin-top: 20px;
+  width: 100%;
+  height: 300px;
+  background-color: #ccc;
+  margin: auto;
+  font-family: fantasy;
+  line-height: 300px;
+  background-image: url("https://scr.vn/wp-content/uploads/2020/07/h%C3%ACnh-n%E1%BB%81n-thi%C3%AAn-h%C3%A0.jpg");
+  background-position: 50% 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1023px) and (min-width: 840px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 895px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 839px) and (min-width: 420px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    justify-content: center;
+  }
+  .wrapper_sidebar_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .wrap_content {
+      min-width: 600px;
+    }
+
+    .sidebar {
+      width: 100%;
+      margin-top: 20px;
+      margin-right: 50px;
+      .title_category {
+        font-size: 30px;
+        font-weight: bold;
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 419px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    .wrap_product {
+      width: 350px;
+
+      .container {
+        margin: 0 auto;
+      }
+      .img_product {
+        width: 350px;
+        height: 350px;
+      }
+    }
+  }
+  .text {
+    height: 150px;
+    line-height: 150px;
+  }
+  .wrapper_sidebar_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .wrap_content {
+      min-width: 300px;
+    }
+
+    .sidebar {
+      width: 100%;
+      margin-top: 20px;
+      margin-right: 50px;
+      .title_category {
+        font-size: 25px;
+        font-weight: bold;
+        padding-left: 20px;
+      }
+      .category_item {
+        font-size: 16px;
+        padding: 5px 20px;
+      }
+    }
+    .category {
+      margin: 10px 0px 0px;
+    }
+  }
+}
+
+.container:hover {
+  .add_cart {
+    opacity: 1;
+  }
+}
+
+.add_cart {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  width: 40px;
+  z-index: 5;
+  text-align: center;
+  font-weight: 400;
+  background-color: #b31f2a;
+  border-color: #b31f2a;
+  color: #fff;
+  display: grid;
+  opacity: 0;
+  place-items: center;
+}
+
+.add_cart:hover {
+  cursor: pointer;
+  background-color: #fa2634;
+}
+.container:hover svg {
+  transform: rotate(360deg);
+  transition: transform 500ms ease;
+}
+
+.img_product {
+  max-width: 270px;
+  height: 270px;
+  object-fit: cover;
+}
+
+.img_product:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.wrapper div div:first-child {
+  width: fit-content;
+  position: relative;
+}
+
+.parent_avt_product {
+  text-align: center;
+}
+
+.avt_product {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.avt_product:hover {
+  cursor: pointer;
+}
+
+.name_product {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  max-width: fit-content;
+  font-size: 13px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+}
+
+.name_product:hover {
+  cursor: pointer;
+  color: #fa2634;
+}
+
+.cost_product {
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: red;
+}
+
+.cost_product:hover {
+  cursor: inherit;
+}
+
+.pagination {
+  margin-bottom: 20px;
+  nav {
+    display: flex;
+    justify-content: center;
+    button {
+      font-size: 15px;
+    }
+  }
+}
+
+.wrapper_sidebar_content {
+  display: flex;
+  justify-content: center;
+}
+
+.wrap_content {
+  min-width: 1100px;
+}
+.sidebar {
+  width: 200px;
+  margin-top: 20px;
+  margin-right: 50px;
+  .title_category {
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+
+.category {
+  list-style: none;
+  margin: 20px 0px;
+}
+.category_item {
+  padding: 20px 0px 20px 20px;
+  border-bottom: 1px solid #ccc;
+  font-size: 20px;
+}
+
+.category_item a {
+  color: unset;
+}
+
+.category_item.active a {
+  color: #fa2634;
+  font-weight: bold;
+}
+
+.category_item a:hover {
+  color: #fa2634;
+}
